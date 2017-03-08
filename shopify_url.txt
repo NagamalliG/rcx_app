@@ -1,0 +1,6 @@
+App URL:
+https://98312764.ngrok.io/
+
+
+regirect url:
+https://98312764.ngrok.io/auth/shopify/callback

@@ -22,6 +22,10 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 # gem for cerified
 gem 'certified', '>= 1.0.0'
+#include js file in .erb file
+gem 'sprockets-rails', '2.3.3'
+# To use controller variables as javascript variables
+gem 'gon'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

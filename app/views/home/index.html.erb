@@ -1,35 +1,39 @@
 <html>
 <head>
 
-<link rel="stylesheet" type="text/css" href="../assets/stylesheets/application.css">
-<script src="../assets/javascripts/route.js"></script>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+<%= javascript_include_tag('route.js') %>
+<%= stylesheet_link_tag 'application' if params[:action] == 'application' %>
+<%= include_gon %>
 </head>
 <body ng-app="app" ng-controller="controller">
 
 <h1>Store Details..</h1><br>
+<!--
 <% for shop in @shop-%>
 Shopify_Domain : <%=shop.shopify_domain%> &nbsp; - Shopify_Token :<%=shop.shopify_token%> -  Created_at : <%=shop.created_at%>  -  Updated_at : <%=shop.updated_at%></br>
 <%end-%>
+-->
 Tiers :
-<select>
-<% for tiers in @tiers-%>
+<select ng-model="tier" ng-change="GetSelectedTier()">
+<option>-- select --</option>
+<% for tiers in @tiers -%>
 <option><%=tiers.tier%></option>
 <%end-%>
 </select>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 Programs :
-<select>
-<% for programs in @programs-%>
-  <option><%=programs.level%></option>
-  <%end-%>
+
+<select  ng-model="Programs" ng-options="pgrm.programs for pgrm in programs track by pgrm.id">
+  <option value=''>-- select --</option>
 </select>
 
+<!--
 <section>
         <div class="container-fluid">
             <div class="row">
@@ -60,19 +64,14 @@ Programs :
                         </div>
                     </div> 
                     <div class="col-sm-2" width="20%">
-                        <button type="button" class="btn btn-primary button" ng-click="retrieve();">Retrieve</button>
+                        <button type="button" class="btn btn-primary button" ng-click="getDataFromRCXApp();">Retrieve</button>
                     </div>
-
+                 
                 </div>
             </div>
         </div>
     </section>
-
-
-
-
-
-
+    -->
 </body>
 
 </html>
