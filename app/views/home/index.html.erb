@@ -10,20 +10,20 @@
 <%= stylesheet_link_tag 'application' if params[:action] == 'application' %>
 <%= include_gon %>
 </head>
-<body ng-app="app" ng-controller="controller">
+<body ng-app="app" ng-controller="controller" data-ng-init="getDataFromRCXApp()">
 
-<h1>Store Details..</h1><br>
+
 <!--
 <% for shop in @shop-%>
 Shopify_Domain : <%=shop.shopify_domain%> &nbsp; - Shopify_Token :<%=shop.shopify_token%> -  Created_at : <%=shop.created_at%>  -  Updated_at : <%=shop.updated_at%></br>
 <%end-%>
 -->
+<!--  Local  Data-->
+<h1>Database Approach.</h1><br>
+<div data-ng-init="getTiersFromDB()">
 Tiers :
-<select ng-model="tier" ng-change="GetSelectedTier()">
-<option>-- select --</option>
-<% for tiers in @tiers -%>
-<option><%=tiers.tier%></option>
-<%end-%>
+<select  ng-model="selected_tier_db" ng-options="data.tier for data in tierDataFromDB track by data.tier" ng-change="getSelectedTier()">
+  <option value=''>-- select --</option>
 </select>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -32,8 +32,29 @@ Programs :
 <select  ng-model="Programs" ng-options="pgrm.programs for pgrm in programs track by pgrm.id">
   <option value=''>-- select --</option>
 </select>
+</div>
+<hr>
 
+
+<!-- Rest Call Data-->
+<br>
+<h1>Service Approach.</h1><br>
+Tiers :
+<select  ng-model="selected_tier" ng-options="data.tier_desc for data in restData track by data.tier_id" ng-change="getSelectedTierFromRXCApp()">
+  <option value=''>-- select --</option>
+</select>
+
+Programs :
+<select  ng-model="selected_program" ng-options="data.program_desc for data in programsDataFromRest track by data.program_id" ng-change="getSelectedProgramsFromRXCApp()">
+  <option value=''>-- select --</option>
+</select>
+
+Levels :
+<select  ng-model="selected_levels" ng-options="data.level_desc for data in levelsDataFromRest track by data.level_id">
+  <option value=''>-- select --</option>
+</select>
 <!--
+<a href='/rest/getdata'>Get MEAN App Data</a>
 <section>
         <div class="container-fluid">
             <div class="row">

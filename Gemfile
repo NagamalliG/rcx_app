@@ -26,6 +26,8 @@ gem 'certified', '>= 1.0.0'
 gem 'sprockets-rails', '2.3.3'
 # To use controller variables as javascript variables
 gem 'gon'
+#rest client 
+gem 'rest-client'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

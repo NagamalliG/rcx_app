@@ -1,6 +1,10 @@
 class HomeController < ShopifyApp::AuthenticatedController
-    
  def getTiers
+      @tiers = Tiers.all
+      render json: @tiers
+    #   log(request.body.read)
+ end
+ def getPrograms
      #@programs = Programs.all(:tier => 'tier1')
       @selectedData=params['tier']
       @programs = Programs.where(:tier => @selectedData)
@@ -12,15 +16,15 @@ class HomeController < ShopifyApp::AuthenticatedController
   def index
     @products = ShopifyAPI::Product.find(:all, params: { limit: 10 })
       @shop = Shop.all
-      @tiers = Tiers.all
-      i=0;
-      @userlist = @tiers.map do |u|
-        { :_id =>i=i+1 ,:name => u.tier }
-      end
-      json = @userlist.to_json
-      puts json
-      for i in 0..@tiers.length-1
-        puts @tiers[i]['tier']
-      end
+      # @tiers = Tiers.all
+      # i=0;
+      # @userlist = @tiers.map do |u|
+      #   { :_id =>i=i+1 ,:name => u.tier }
+      # end
+      # json = @userlist.to_json
+      # puts json
+      # for i in 0..@tiers.length-1
+      #   puts @tiers[i]['tier']
+      # end
   end
 end
