@@ -19,7 +19,7 @@ Shopify_Domain : <%=shop.shopify_domain%> &nbsp; - Shopify_Token :<%=shop.shopif
 <%end-%>
 -->
 <!--  Local  Data-->
-<h1>Database Approach.</h1><br>
+<h4>Database Approach.</h4><br>
 <div data-ng-init="getTiersFromDB()">
 Tiers :
 <select  ng-model="selected_tier_db" ng-options="data.tier for data in tierDataFromDB track by data.tier" ng-change="getSelectedTier()">
@@ -38,7 +38,7 @@ Programs :
 
 <!-- Rest Call Data-->
 <br>
-<h1>Service Approach.</h1><br>
+<h4>Service Approach.</h4><br>
 Tiers :
 <select  ng-model="selected_tier" ng-options="data.tier_desc for data in restData track by data.tier_id" ng-change="getSelectedTierFromRXCApp()">
   <option value=''>-- select --</option>

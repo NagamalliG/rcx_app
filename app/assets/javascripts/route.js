@@ -38,7 +38,7 @@ app.controller("controller", function($scope, $http) {
         $http.get('/getTiers').then(function successCallback(response) {
             $scope.tierDataFromDB = response.data;
         }, function errorCallback(response) {
-            alert('failed');
+            //alert('failed');
         });
     };
     $scope.getSelectedTier = function() {
@@ -70,7 +70,7 @@ app.controller("controller", function($scope, $http) {
             $scope.restData = response.data;
             console.log('rest data: =  ' + JSON.stringify($scope.restData));
         }, function errorCallback(response) {
-            alert('failed');
+            //alert('failed');
         });
     };
     $scope.getSelectedTierFromRXCApp = function() {
@@ -81,7 +81,7 @@ app.controller("controller", function($scope, $http) {
             }).then(function successCallback(response) {
                 $scope.programsDataFromRest = response.data;
             }, function errorCallback(response) {
-                alert('failed...');
+                //alert('failed...');
             });
             $scope.levelsDataFromRest = [];
         } else {
@@ -96,7 +96,7 @@ app.controller("controller", function($scope, $http) {
             }).then(function successCallback(response) {
                 $scope.levelsDataFromRest = response.data;
             }, function errorCallback(response) {
-                alert('failed...');
+                //alert('failed...');
             });
         } else {
             $scope.levelsDataFromRest = [];
