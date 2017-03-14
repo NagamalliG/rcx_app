@@ -19,4 +19,5 @@ ActiveRecord::Schema.define(version: 20170302092112) do
     t.datetime "updated_at"
     t.index ["shopify_domain"], name: "index_shops_on_shopify_domain", unique: true
   end
+
 end
