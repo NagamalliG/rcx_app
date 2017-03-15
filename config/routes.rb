@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root :to => 'home#index'
   get 'rest/getTierSvc'
-
+  get 'rest/getPoints'
+  root 'rest#getPoints'
   get 'rest/getProgramsSvc/' => 'rest#getProgramsSvc', :defaults => { :format => 'json'},  :as => :get_programs_svc
   get 'rest/getLevelsSvc/' => 'rest#getLevelsSvc', :defaults => { :format => 'json'},  :as => :get_levels_svc
   # get 'rest/getProgramsFromMeanApp'
