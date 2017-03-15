@@ -102,11 +102,5 @@ app.controller("controller", function($scope, $http) {
             $scope.levelsDataFromRest = [];
         }
     };
-
-
-
-
-
-
     //$scope.countries = [{ "_id": 1, "name": "India", "States": [{ "id": 1, "name": "Maharashtra", "cities": ["Pune", "Mumbai", "Nagpur", "Akola"] }, { "id": 2, "name": "Madhya Pradesh", "cities": ["Indore", "Bhopal", "Jabalpur"] }, { "id": 3, "name": "Rajasthan", "cities": ["Jaipur", "Ajmer", "Jodhpur"] }] }, { "_id": 2, "name": "USA", "States": [{ "id": 1, "name": "Alabama", "cities": ["Montgomery", "Birmingham"] }, { "id": 2, "name": "California", "cities": ["Sacramento", "Fremont"] }, { "id": 3, "name": "Illinois", "cities": ["Springfield", "Chicago"] }] }, { "_id": 3, "name": "Australia", "States": [{ "id": 1, "name": "New South Wales", "cities": ["Sydney"] }, { "id": 2, "name": "Victoria", "cities": ["Melbourne"] }] }];
 });

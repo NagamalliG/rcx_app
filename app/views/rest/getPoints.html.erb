@@ -12,9 +12,9 @@
 </head>
 <body>
 <h1>
-   MEAN Application Data : <%= @TierDataFromRest %><br>
-   <% for restData in @restData -%>
-        <option><%=restData.tier_id%></option>
+   Points : <%= @TierDataFromRest %><br>
+   <% for points in @points -%>
+        <option><%=points.points%></option>
    <%end-%>
 </h1>
 </body>
